@@ -41,7 +41,7 @@ class JpaTutorialApplicationTests {
 
     @Test
     void getEntityByTitle() {
-        List<ProductEntity> productEntity = productRepository.findByTitle("Pepsi");
+        List<ProductEntity> productEntity = productRepository.findByTitleOrderByPrice("Pepsi");
         System.out.println(productEntity);
     }
 
@@ -71,7 +71,7 @@ class JpaTutorialApplicationTests {
 
     @Test
     void getEntityByTitleContainingIgnoreCase() {
-        List<ProductEntity> productEntities = productRepository.findByTitleContainingIgnoreCase("m");
+        List<ProductEntity> productEntities = productRepository.findByTitleContainingIgnoreCase("m", null);
         System.out.println(productEntities);
     }
 
